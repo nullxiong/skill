@@ -1,0 +1,4 @@
+interface:
+  display_name: "材料撰写工作流"
+  short_description: "按场景策划PPT图片稿、HTML和汇报材料"
+  default_prompt: "Use $presentation-writing-workflow to plan and draft a presentation or HTML briefing with outline confirmation and visual prompts."
