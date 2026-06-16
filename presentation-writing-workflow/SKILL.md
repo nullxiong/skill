@@ -1,6 +1,6 @@
 ---
 name: presentation-writing-workflow
-description: Material planning and drafting workflow for internal sharing, internal reporting, and customer-facing briefings. Use when Codex needs to create, plan, or refine presentation-like materials as PPT image drafts, HTML briefings, editable PPT candidates, or text-only outlines; includes requirement clarification, outline confirmation, slide/screen copywriting, visual prompt writing, image2-oriented page generation guidance, and optional handoff to an image-to-editable-PPT skill.
+description: Material planning and drafting workflow for internal sharing, internal reporting, and customer-facing briefings. Use when Codex needs to create, plan, or refine presentation-like materials as PPT image drafts, HTML briefings, editable PPT candidates, or text-only outlines; includes requirement clarification, outline confirmation, slide/screen copywriting, visual prompt writing, image-generation-oriented page guidance, and optional handoff to an image-to-editable-PPT skill.
 ---
 
 # Presentation Writing Workflow
@@ -36,7 +36,7 @@ First classify material type:
 
 Then classify output format:
 
-- PPT image draft: write page-by-page content and image2 visual prompts. Do not use Codex's built-in presentation-writing or PPT-generation skill for final creation.
+- PPT image draft: write page-by-page content and visual prompts for image generation. Do not use Codex's built-in presentation-writing or PPT-generation skill for final creation.
 - HTML: write screen/section content and implementation-oriented visual prompts for a web briefing or interactive report.
 - Editable PPT: first plan as PPT image draft or text structure, then ask whether to convert through an image-to-editable-PPT skill.
 - Text only: produce outline, page/screen copy, speaker notes if requested, and no generation handoff.
@@ -55,7 +55,7 @@ Use this route table:
 
 | Material type | PPT image draft | HTML |
 |---|---|---|
-| Internal sharing | Cinematic visual storytelling, strong chapter breaks, image2 pages | Immersive scroll story, bold motion, optional 3D/animation |
+| Internal sharing | Cinematic visual storytelling, strong chapter breaks, generated-image pages | Immersive scroll story, bold motion, optional 3D/animation |
 | Internal reporting | Clear executive pages, metrics, risks, roadmap | Report page/dashboard, charts, tables, decision panels |
 | Customer briefing | Premium proposal visuals, clean tech style, credibility | Interactive proposal site, solution flow, cases, architecture |
 
@@ -132,12 +132,12 @@ Read only the references needed for the current route:
 - For customer briefings: `references/customer-briefing.md`
 - For outline and checkpoint behavior: `references/outline-and-checkpoints.md`
 - For style routing and page/screen patterns: `references/visual-styles.md`
-- For image2 visual prompts: `references/image2-prompting.md`
+- For image generation visual prompts: `references/image-generation-prompting.md`
 - For HTML output: `references/html-output.md`
 
 ## Tool Guidance
 
-For PPT image drafts, prepare image2-ready prompts per page. When image generation is available, use image generation to create slide images.
+For PPT image drafts, prepare image-generation-ready prompts per page. When image generation is available, prefer the built-in `image_gen` tool to create slide images. If `image_gen` is unavailable or blocked, ask before using another image-generation route.
 
 For HTML, implement with the simplest frontend stack that satisfies the experience:
 
