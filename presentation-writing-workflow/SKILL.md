@@ -1,6 +1,6 @@
 ---
 name: presentation-writing-workflow
-description: Material planning and drafting workflow for internal sharing, internal reporting, and customer-facing briefings. Use when Codex needs to create, plan, or refine presentation-like materials as PPT image drafts, HTML briefings, editable PPT candidates, or text-only outlines; includes requirement clarification, outline confirmation, slide/screen copywriting, visual prompt writing, image-generation-oriented page guidance, and optional handoff to an image-to-editable-PPT skill.
+description: Material planning and drafting workflow for internal sharing, internal reporting, and customer-facing briefings. Use when Codex needs to create, plan, or refine presentation-like materials as PPT image drafts, HTML briefings, editable PPT candidates, or text-only outlines; includes requirement clarification, outline confirmation, slide/screen copywriting, visual prompt writing, image-generation-oriented page guidance with 5-style preview selection, and optional handoff to an image-to-editable-PPT skill.
 ---
 
 # Presentation Writing Workflow
@@ -22,7 +22,8 @@ Pause for user input at these checkpoints:
 
 1. Before writing: confirm material type, output format, audience, scenario, page/screen count, duration, source material, confidentiality limits, preferred style, and whether HTML should be static, interactive, dashboard-like, or immersive/3D.
 2. After outline: present a table outline and ask the user to confirm or revise it before drafting pages/screens.
-3. Before editable PPT conversion: if the output is PPTX or editable PPT, explain that complex image backgrounds, light effects, 3D compositions, gradients, and layered visual pages may convert poorly. Ask whether to keep image-based slides or call an existing image-to-PPT skill.
+3. Before generating full PPT image drafts: use `image_gen` to create 5 style preview images based on the confirmed material type, user style requirements, and one representative page. Ask the user to choose one preview or request adjustments before generating the full page set.
+4. Before editable PPT conversion: if the output is PPTX or editable PPT, explain that complex image backgrounds, light effects, 3D compositions, gradients, and layered visual pages may convert poorly. Ask whether to keep image-based slides or call an existing image-to-PPT skill.
 
 Never generate full page/screen content before the outline is confirmed.
 
@@ -123,6 +124,18 @@ Visual prompt:
 - Avoid:
 ```
 
+## PPT Image Preview Stage
+
+For PPT image drafts, do not generate the full deck images immediately after page drafting. First create 5 visual style previews with the built-in `image_gen` tool:
+
+- Use a representative page, preferably the cover, a chapter divider, or the most visually important page.
+- Keep the user's style requirements and material type visible in all 5 options.
+- Vary only meaningful visual directions: cinematic intensity, professional cleanliness, technology feel, layout density, color/lighting, and metaphor system.
+- Label the previews as Option 1-5 in the response and summarize the design difference in one short line each.
+- Ask the user which option to use, or whether to combine/adjust options.
+
+Only after the user confirms a preview direction should you generate the full page image draft set. Apply the chosen direction consistently across all pages while still adapting composition to each page's content.
+
 ## Reference Selection
 
 Read only the references needed for the current route:
@@ -145,6 +158,23 @@ For HTML, implement with the simplest frontend stack that satisfies the experien
 - React or a local app structure when interaction, state, routing, or component reuse matters.
 - Chart libraries for report/dashboard pages.
 - Three.js or animation libraries only when the material type and story justify the complexity.
+
+### Optional High-Impact HTML Enhancement
+
+When the user asks for a more cinematic, visually striking, technology-oriented, or motion-rich HTML experience, recommend this optional three-stage workflow:
+
+1. `imagegen-frontend-web`: explore and confirm the visual direction with reference images.
+2. `gpt-taste`: implement the HTML with stronger layout variance, typography, spacing, and purposeful motion.
+3. `impeccable`: critique, audit, and polish the implemented page.
+
+This is a recommendation, not the default execution path:
+
+- Do not load, invoke, install, or hand off to these skills automatically.
+- Briefly explain the expected visual benefit and additional token/tool cost.
+- Ask for explicit user confirmation before using any stage.
+- Allow the user to choose one stage, selected stages, or the complete workflow.
+- If the user does not confirm, continue with this skill's standard HTML workflow.
+- Do not block HTML creation when any recommended skill is unavailable.
 
 For semantic 3D HTML:
 
