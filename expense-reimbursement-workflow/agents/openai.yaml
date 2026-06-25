@@ -1,0 +1,7 @@
+interface:
+  display_name: "报销工作流"
+  short_description: "邮箱取票归档并生成差旅报销 Excel"
+  default_prompt: "Use $expense-reimbursement-workflow to fetch reimbursement invoices from email, archive them locally, and generate a filled travel reimbursement Excel workbook."
+
+policy:
+  allow_implicit_invocation: true
