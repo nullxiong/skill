@@ -30,6 +30,29 @@ For each section, specify both copy and implementation direction:
 - For semantic 3D sections: the exact entities, labels, data, stages, or relationships the 3D scene must carry.
 - For non-3D sections: the reason 2D, charts, or text are clearer.
 
+## Five-Style Composite Preview Flow
+
+Before implementing HTML when visual direction matters, create 5 composite preview boards with `image_gen` and ask the user to choose one direction.
+
+Each option should be one combined preview image containing 5-6 key screen thumbnails. Use the confirmed outline to choose the screens, such as:
+
+- Hero or opening screen.
+- Core narrative or problem framing.
+- KPI/dashboard/report section.
+- Solution architecture or operating model.
+- Case/timeline/roadmap section.
+- Closing or decision screen.
+
+The 5 boards should share the same topic, outline, and content constraints, but vary the design system:
+
+1. Immersive cinematic story.
+2. Premium clean technology briefing.
+3. Dense executive dashboard/report.
+4. Interactive solution/product narrative.
+5. Minimal professional consulting style.
+
+Present the boards as Option 1-5 with concise notes about visual tone, layout system, information density, motion implication, and best-fit use case. Do not implement the HTML until the user confirms one option or asks for adjustments.
+
 ## Semantic 3D Rule
 
 Do not start with "cool 3D" as the concept. Start with the business relationship the audience must understand:
@@ -53,6 +76,23 @@ Every 3D scene should have visible labels or interactions tied to the material's
 - Animation libraries: use when transitions are part of the communication rhythm.
 
 For 3D-heavy HTML, prefer an app structure such as Vite + React + Three.js or React Three Fiber when the project needs multiple scenes, stateful interactions, scroll-linked camera moves, reusable components, or ongoing iteration. Single-file HTML is acceptable for compact prototypes, but avoid using it as the final shape for complex semantic 3D experiences.
+
+## Optional Three-Stage Visual Enhancement
+
+Recommend, but do not automatically use, this workflow when the user explicitly wants a cool, cinematic, high-impact, technology-oriented, or motion-rich result:
+
+| Stage | Optional skill | Purpose |
+|---|---|---|
+| Visual direction | `imagegen-frontend-web` | Generate reference frames and align on composition, color, atmosphere, and visual language before implementation. |
+| HTML implementation | `gpt-taste` | Build with stronger layout variance, typography, spacing, GSAP-style motion direction, and anti-template constraints. |
+| Design review | `impeccable` | Critique, audit, and polish hierarchy, layout, type, color, motion, responsiveness, and common AI-design anti-patterns. |
+
+Before using it:
+
+- State that it may consume additional model tokens and image-generation quota.
+- Ask the user whether to use the full workflow or selected stages.
+- Treat silence or no confirmation as a decision to stay with the standard HTML workflow.
+- Never install a missing skill without a separate explicit installation request.
 
 ## Material Differences
 
