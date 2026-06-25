@@ -1,6 +1,6 @@
 ---
 name: presentation-writing-workflow
-description: Material planning and drafting workflow for internal sharing, internal reporting, and customer-facing briefings. Use when Codex needs to create, plan, or refine presentation-like materials as PPT image drafts, HTML briefings, editable PPT candidates, or text-only outlines; includes requirement clarification, outline confirmation, slide/screen copywriting, visual prompt writing, image-generation-oriented page guidance with 5-style preview selection, and optional handoff to an image-to-editable-PPT skill.
+description: Material planning and drafting workflow for internal sharing, internal reporting, and customer-facing briefings. Use when Codex needs to create, plan, or refine presentation-like materials as PPT image drafts, HTML briefings, editable PPT candidates, or text-only outlines; includes requirement clarification, outline confirmation, slide/screen copywriting, visual prompt writing, image-generation-oriented page guidance with 5-style preview selection for PPT image drafts and HTML composite previews, and optional handoff to an image-to-editable-PPT skill.
 ---
 
 # Presentation Writing Workflow
@@ -22,8 +22,9 @@ Pause for user input at these checkpoints:
 
 1. Before writing: confirm material type, output format, audience, scenario, page/screen count, duration, source material, confidentiality limits, preferred style, and whether HTML should be static, interactive, dashboard-like, or immersive/3D.
 2. After outline: present a table outline and ask the user to confirm or revise it before drafting pages/screens.
-3. Before generating full PPT image drafts: use `image_gen` to create 5 style preview images based on the confirmed material type, user style requirements, and one representative page. Ask the user to choose one preview or request adjustments before generating the full page set.
-4. Before editable PPT conversion: if the output is PPTX or editable PPT, explain that complex image backgrounds, light effects, 3D compositions, gradients, and layered visual pages may convert poorly. Ask whether to keep image-based slides or call an existing image-to-PPT skill.
+3. Before implementing HTML: use `image_gen` to create 5 visual direction preview boards based on the confirmed outline and style requirements. Each board should be one combined preview image containing 5-6 key screen thumbnails. Ask the user to choose one board or request adjustments before implementation.
+4. Before generating full PPT image drafts: use `image_gen` to create 5 style preview images based on the confirmed material type, user style requirements, and one representative page. Ask the user to choose one preview or request adjustments before generating the full page set.
+5. Before editable PPT conversion: if the output is PPTX or editable PPT, explain that complex image backgrounds, light effects, 3D compositions, gradients, and layered visual pages may convert poorly. Ask whether to keep image-based slides or call an existing image-to-PPT skill.
 
 Never generate full page/screen content before the outline is confirmed.
 
@@ -135,6 +136,20 @@ For PPT image drafts, do not generate the full deck images immediately after pag
 - Ask the user which option to use, or whether to combine/adjust options.
 
 Only after the user confirms a preview direction should you generate the full page image draft set. Apply the chosen direction consistently across all pages while still adapting composition to each page's content.
+
+## HTML Composite Preview Stage
+
+For HTML output, do not start full implementation immediately after outline confirmation when visual direction matters. First create 5 composite preview boards with the built-in `image_gen` tool:
+
+- Each option must be one combined preview image, not separate images.
+- Each combined preview image should show 5-6 key screens or sections as thumbnails, such as hero, narrative section, KPI/dashboard, architecture/solution, case/timeline, and closing screen.
+- Use the confirmed outline to choose the 5-6 screens. For shorter HTML, include all major screens.
+- Keep the user's style requirements and material type visible in all 5 options.
+- Vary meaningful system-level directions: information density, navigation pattern, typography, color/lighting, motion implication, component language, and 3D/visual metaphor.
+- Label the preview boards as Option 1-5 and summarize the design difference in one short line each.
+- Ask the user which option to use, or whether to combine/adjust options.
+
+Only after the user confirms a preview board should you implement the HTML. Treat the selected board as visual direction, then verify the actual HTML with browser screenshots because interaction, motion, responsive behavior, and 3D cannot be validated by the preview image alone.
 
 ## Reference Selection
 
