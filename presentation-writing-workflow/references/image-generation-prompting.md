@@ -27,6 +27,20 @@ Text area: leave clean readable space at [position] for title and bullets.
 Avoid: small unreadable text, random logos, clutter, distorted UI, excessive decoration.
 ```
 
+## Five-Style Preview Flow
+
+Before generating all PPT slide images, create 5 style preview images with `image_gen` and ask the user to choose one direction.
+
+Use one representative page for the preview. Prefer the cover, a chapter divider, or the page with the strongest visual metaphor. The 5 previews should share the same topic and copy constraints, but vary the style direction:
+
+1. High-impact cinematic.
+2. Premium clean technology.
+3. Data/architecture focused.
+4. Storytelling and metaphor driven.
+5. Minimal executive polish.
+
+After generating the previews, present them as Option 1-5 with concise notes about visual tone, composition, color/lighting, and best-fit use case. Do not generate the full deck images until the user confirms one option or asks for adjustments.
+
 ## Chinese Output
 
 When the final slide copy is Chinese, keep prompt instructions in English if image generation performs better, but specify:
