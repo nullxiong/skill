@@ -50,3 +50,15 @@ After the table, ask:
 ```
 
 Do not continue into full drafting until the user confirms.
+
+## PPT Image Preview Confirmation
+
+After the page-by-page copy and visual prompts are drafted for a PPT image draft, create 5 style preview images with `image_gen` before generating the full set.
+
+Ask:
+
+```text
+我先基于你的风格要求生成 5 种视觉预览方向。请确认选择哪一种作为整套 PPT 图片稿的统一风格，也可以告诉我要混合、加强或弱化的地方。
+```
+
+Do not generate all page images until the user confirms the preview direction.
