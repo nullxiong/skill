@@ -51,6 +51,18 @@ After the table, ask:
 
 Do not continue into full drafting until the user confirms.
 
+## HTML Composite Preview Confirmation
+
+After the HTML outline is confirmed and before implementation, create 5 composite preview boards with `image_gen` when visual direction matters.
+
+Each board should be one combined preview image containing 5-6 key screens or sections. Ask:
+
+```text
+我先基于这个 HTML 大纲和你的风格要求生成 5 种视觉预览方向。每种方向会合并展示 5-6 个关键页面/区块，请确认选择哪一种作为 HTML 的整体风格，也可以告诉我要混合、加强或弱化的地方。
+```
+
+Do not implement the HTML until the user confirms the preview direction.
+
 ## PPT Image Preview Confirmation
 
 After the page-by-page copy and visual prompts are drafted for a PPT image draft, create 5 style preview images with `image_gen` before generating the full set.
